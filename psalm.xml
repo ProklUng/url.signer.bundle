@@ -19,7 +19,7 @@
         <ignoreFiles>
             <directory name="vendor"/>
             <directory name="Tests"/>
-            <file name="ContainerLocatorBundle.php"/>
+            <file name="UrlSignedBundle.php"/>
         </ignoreFiles>
     </projectFiles>
 
