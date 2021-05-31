@@ -21,6 +21,17 @@ composer require proklung/url-signer-bundle
 
 ```
 
+## Пример конфигурации
+
+```yaml
+url_signer:
+  signature_key: 'testkey'
+  signer: 'md5' # 'sha256' by default
+  default_expiration: 24 # 1 day by default
+  expires_parameter: 'expires' # 'expires' by default
+  signature_parameter: 'signature' # 'signature' by default
+```
+
 ## Оригинальная документация
 
 Create and validate signed URLs with a limited lifetime in Symfony.
