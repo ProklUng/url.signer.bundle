@@ -1,0 +1,35 @@
+{
+  "name": "proklung/url-signer-bundle",
+  "description": "Create and validate signed URLs with a limited lifetime in custom Symfony",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Gavrilov Fedy",
+      "email": "fedor.gavrilov.75@mail.ru"
+    }
+  ],
+
+  "support": {
+    "issues": "https://github.com/ProklUng/url-signer-bundle/issues",
+    "source": "https://github.com/ProklUng/url-signer-bundle"
+  },
+  "autoload": {
+    "psr-4": {
+      "Prokl\\UrlSignedBundle\\": "",
+      "Tests\\": "Tests"
+    }
+  },
+  "require": {
+    "php": ">=7.3",
+    "symfony/dependency-injection": "^4.0 || ^5.0",
+    "symfony/http-kernel": "^4.0 || ^5.0",
+    "symfony/config": "~4|~5",
+    "symfony/routing": "~4|~5",
+    "symfony/framework-bundle": "^4.0 || ^5.0",
+    "spatie/url-signer": "^1.1"
+  },
+   "require-dev": {
+        "proklung/phpunit-testing-tools": "^1.0"
+   }
+}
