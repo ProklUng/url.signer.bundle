@@ -30,6 +30,9 @@
     "spatie/url-signer": "^1.1"
   },
    "require-dev": {
-        "proklung/phpunit-testing-tools": "^1.0"
+        "proklung/phpunit-testing-tools": "^1.0",
+        "infection/infection": "^0.23.0",
+        "jangregor/phpstan-prophecy": "^0.8",
+        "phpspec/prophecy-phpunit": "^2.0"
    }
 }
