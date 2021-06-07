@@ -46,7 +46,7 @@ class ValidateSignedRouteListenerTest extends BaseTestCase
     {
         $request = Request::create('http://test.org/valid-signature');
         $request->attributes->set('_route_params', ['_signed' => true]);
-        $event = new RequestEvent($this->prophesize(HttpKernelInterface::class)->reveal(), $request, HttpKernelInterface::MASTER_REQUEST);
+        $event = new RequestEvent($this->prophesize(HttpKernelInterface::class)->reveal(), $request, null);
 
         $this->signerProphecy->validate('/valid-signature')->willReturn(true);
 
@@ -61,7 +61,7 @@ class ValidateSignedRouteListenerTest extends BaseTestCase
     public function testValidateSignedRouteMissingRouteParamsAttribute(): void
     {
         $request = Request::create('http://test.org/valid-signature');
-        $event = new RequestEvent($this->prophesize(HttpKernelInterface::class)->reveal(), $request, HttpKernelInterface::MASTER_REQUEST);
+        $event = new RequestEvent($this->prophesize(HttpKernelInterface::class)->reveal(), $request, null);
 
         $this->dispatcher->dispatch($event);
 
@@ -75,7 +75,7 @@ class ValidateSignedRouteListenerTest extends BaseTestCase
     {
         $request = Request::create('http://test.org/valid-signature');
         $request->attributes->set('_route_params', ['_locale' => 'fr']);
-        $event = new RequestEvent($this->prophesize(HttpKernelInterface::class)->reveal(), $request, HttpKernelInterface::MASTER_REQUEST);
+        $event = new RequestEvent($this->prophesize(HttpKernelInterface::class)->reveal(), $request, null);
 
         $this->dispatcher->dispatch($event);
 
@@ -89,7 +89,7 @@ class ValidateSignedRouteListenerTest extends BaseTestCase
     {
         $request = Request::create('http://test.org/valid-signature');
         $request->attributes->set('_route_params', ['_signed' => false]);
-        $event = new RequestEvent($this->prophesize(HttpKernelInterface::class)->reveal(), $request, HttpKernelInterface::MASTER_REQUEST);
+        $event = new RequestEvent($this->prophesize(HttpKernelInterface::class)->reveal(), $request, null);
 
         $this->dispatcher->dispatch($event);
 
